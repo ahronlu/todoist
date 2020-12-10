@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaChevron,
+  FaChevronDown,
   FaInbox,
   FaRegCalendarAlt,
   FaRegCalendar,
@@ -12,7 +12,7 @@ export const Sidebar = () => {
       <ul className="sidebar__generic">
         <li>
           <span>
-            <FaIndex />
+            <FaInbox />
           </span>
           <span>Inbox</span>
         </li>
@@ -32,7 +32,7 @@ export const Sidebar = () => {
 
       <div className="side__middle">
         <span>
-          <FaChevron />
+          <FaChevronDown />
         </span>
         <h2>Projects</h2>
       </div>
