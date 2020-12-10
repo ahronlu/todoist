@@ -1,4 +1,4 @@
-import { collectedTasksExist } from "../constants";
+import { collactedTasks } from "../constants";
 
-export const collectedTasksExist = (selectedProjected) =>
-  collectedTasksExist.find((find) => task.key === selectedProjected);
+export const collactedTasksExist = (selectedProjected) =>
+  collactedTasks.find((find) => task.key === selectedProjected);
