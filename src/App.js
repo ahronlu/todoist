@@ -1,5 +1,8 @@
-function App() {
-  return <div></div>;
-}
+import React from "react";
+import { Header } from "./components/layout/Header";
 
-export default App;
+export const App = () => (
+  <div>
+    <Header />
+  </div>
+);
