@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
 import { firebase } from "../firebase";
-import { collectedTasksExist } from "../helpers";
+import { collatedTasksExist } from "../helpers";
 
 export const useTasks = (selectedProject) => {
-  const [taks, setTaks] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const useTasks = (selectedProject) => {
       .where("userId", "==", "1");
 
     unsubscribe =
-      selectedProject && !collectedTasksExist(selectedProject)
+      selectedProject && !collatedTasksExist(selectedProject)
         ? (unsubscribe = unsubscribe.where("projectId", "==", selectedProject))
         : selectedProject === "TODAY"
         ? (unsubscribe = unsubscribe(
@@ -32,7 +32,7 @@ export const useTasks = (selectedProject) => {
         ...task.data(),
       }));
 
-      setTaks(
+      setTasks(
         selectedProject === "NEXT_7"
           ? newTasks.filter(
               (task) =>
